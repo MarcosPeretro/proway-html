@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela Cadastro de PET</title>
+</head>
+
+<body>
+    <!-- Usuário escolhe o tipo(gato, cachorro)[radio]
+    Nome [text]
+    Raça [select]
+    Idade [number]
+    Dono [text]
+    Peso [text]
+    Data e hora da consulta [datetime-local]
+    Foto [file]
+    -->
+    <h1>Cadastro de agendamento de consulta do PET</h1>
+    <form action="/cadastrar" method="get">
+
+        <span>Selecione o tipo de animal : </span>
+        <div>
+            <input type="radio" id="pet-cachorro" name="pet-tipo">
+            <label for="pet-cachorro">Cachorro</label>
+
+            <input type="radio" id="pet-gato" name="pet-tipo">
+            <label for="pet-gato">Gato</label>
+        </div>
+        <div>
+            <label for="pet-nome">Nome : </label>
+            <input type="text" id="pet-nome required="required" minlength="3" maxlength="30">
+        </div>
+        <div>
+            <label for="pet-raça">Raça</label>
+            <select id="pet-raça" required="required"">
+                <option selected="select" disabled="disabled">Selecione uma opção</option>
+                <option value="7">Buldogue francês</option>
+                <option value="4">Buldogue</option>
+                <option value="9">Don sphynx</option>
+                <option value="6">Golden retriever</option>
+                <option value="8">Husky siberiano</option>
+                <option value="5">Labrador retriever</option>
+                <option value="10">Maine Coon</option>
+                <option value="3">Pastor-alemão</option>
+                <option value="1">Pinscher</option>
+                <option value="2">Rottweiler</option>
+            </select>
+        </div>
+        <div>
+            <label for="pet-idade">Idade : </label>
+            <input type="text" id="pet-idade" list="idades" required="required">
+            <datalist id="idades">
+                <option value="0 anos"></option>
+                <option value="1 anos"></option>
+                <option value="2 anos"></option>
+                <option value="3 anos"></option>
+                <option value="4 anos"></option>
+            </datalist>
+        </div>
+        <div>
+            <label for="pet-dono">Dono : </label>
+            <input type="text" id="pet-dono" required="required">
+        </div>
+        <div>
+            <label for="pet-peso">Peso : </label>
+            <input type="text" id="pet-peso" required="required">
+            </div.>
+            <div>
+                <label for="pet-data-hora">Data hora da consulta : </label>
+                <input type="datetime-local" id="pet-data-hora" required="required">
+            </div>
+            <div>
+                <label for="pet-foto">Foto : </label>
+                <input type="file" id="pet-foto" accept="image/png, image/jpg, image/gif, image/webp">
+            </div>
+            <button type="submit">Cadastrar</button>
+    </form>
+</body>
+
+</html>
