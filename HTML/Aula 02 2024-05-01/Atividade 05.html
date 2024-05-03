@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blox fight</title>
+</head>
+
+<body>
+    <form action="/cadastrar" method="post">
+        <div>
+            <label for="nickname">nick : </label>
+            <input type="text" id="nickname" name="nick" required="required" maxlength="21">
+        </div>
+        <div>
+            <input type="radio" id="level-A" name="level" value="level-A" required="required">
+            <label for="level-A">0-700</label>
+        </div>
+        <div>
+            <input type="radio" id="level-B" name="level" value="level-B" required="required">
+            <label for="level-B">700-1300</label>
+        </div>
+        <div>
+            <input type="radio" id="level-C" name="level" value="level-C" required="required">
+            <label for="level-C">1300-2000</label>
+        </div>
+        <div>
+            <input type="radio" id="level-D" name="level" value="level-D" required="required">
+            <label for="level-D">2000-2550</label>
+        </div>
+        <button type="submit">cadastrar</button>
+    </form>
+</body>
+
+</html>
