@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista</title>
+</head>
+
+<body>
+    <a href="index.html">Menu</a>
+    <span>Cursos</span>
+    
+    <div>
+        <a href="CadastroCurso.html">&#x2795 Criar Curso</a>
+    </div>
+
+    <table width="600" cellpadding="5" cellSpacing="5" border="1">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Categoria</th>
+                <th>Nome</th>
+                <th>Thumb</th>
+                <th>Duração</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>10</td>
+                <td rowspan="2">Back-end</td>
+                <td>Python &#x1F525</td>
+                <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png"
+                        alt="" width="50""></td>
+                <td>60</td>
+                <td>
+                    <a href=" DetalheCurso.html">Visualizar detalhes</a>
+                    <a href="#">Apagar</a>
+                </td>
+
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>Java &#x1F525</td>
+                <td><img src="data:image/png;base64,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"
+                        alt="imagem java" width="70"></td>
+                <td>70</td>
+                <td>
+                    <a href=" DetalheCurso.html">Visualizar detalhes</a>
+                    <a href="#">Apagar</a>
+                </td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>Front-end</td>
+                <td>HTML 5 &#x1F525</td>
+                <td><img src="https://kinsta.com/wp-content/uploads/2021/03/HTML-5-Badge-Logo.png" alt="imagem HTML"
+                        width="80"></td>
+                <td>20</td>
+                <td>
+                    <a href=" DetalheCurso.html">Visualizar detalhes</a>
+                    <a href="#">Apagar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
