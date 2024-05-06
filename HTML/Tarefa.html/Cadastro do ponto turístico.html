@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro do ponto turistico</title>
+</head>
+
+<body>
+    <a href="index.html">Menu</a>
+    <span>tela de cadastro do ponto turistico</span>
+    <form action="Armazenar ponto turistico.html" method="post">
+        <fieldset>
+            <legend>Detalhes do ponto turistico</legend>
+            <div>
+                <label for="campo-nome">Nome : </label>
+                <input type="text" name="Nome" id="campo-nome" required>
+            </div>
+            <div>
+                <label for="campo-Data">Data : </label>
+                <input type="date" name="Data" id="campo-Data" required>
+            </div>
+            <div>
+                <label for="campo-Descrição">Descrição : </label>
+                <input type="text" name="Descriçao" id="campo-Descrição" required>
+            </div>
+            <div>
+                <label for="campo-Imagem">Imagem : </label>
+                <input type="file" name="Imagem" id="campo-Imagem" required>
+            </div>
+        </fieldset>
+        <button type="submit">Cadastrar</button>
+    </form>
+</body>
+
+</html>
