@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista carros</title>
+    <style>
+        body{
+            background-color: grey;
+            color: whitesmoke;
+        }
+    </style>
+    <script>
+        
+    </script>
+</head>
+
+<body>
+    <form action=" Exercicio.html" method="get">
+    <label for="campo-Marcas">Escolha uma marca : </label>
+    <select name="Marcas" id="campo-Marcas">
+        <option selected=" select" disabled="disabled">Selecione uma opção</option>
+        <option value="Koenigsegg">Koenigsegg</option>
+        <option value="Nissan">Nissan</option>
+        <option value="Audi">Audi</option>
+        <option value="BMW">BMW</option>
+        <option value="Toyota">Toyota</option>
+    </select>
+    <div><span>Escolha o estado do carro</span></div>
+    <div>
+        <input type="radio" name="carro-estado" id="Carro-Novo">
+        <label for="Carro-Novo">Novos</label>
+    </div>
+    <div>
+        <input type="radio" name="carro-estado" id="Carro-Usado">
+        <label for="Carro-Usado">Usados</label>
+    </div>
+    <div>
+        <label for="Carro-ano-inicial">ano inicial</label>
+        <input type="number" name="ano-inicial" id="Carro-ano-inicial">
+    </div>
+    <div>
+        <label for="Carro-ano-Final">ano Final</label>
+        <input type="number" name="ano-Final" id="Carro-ano-Final">
+    </div>
+    <div>
+        <input type="checkbox" name="Vermelho" id="Carro-cores-Vermelho">
+        <label for="Carro-cores-Vermelho">Vermelho</label>
+    </div>
+    <div>
+        <input type="checkbox" name="Azul" id="Carro-cores-Azul">
+        <label for="Carro-cores-Azul">Azul</label>
+    </div>
+    <div>
+        <input type="checkbox" name="Verde" id="Carro-cores-Verde">
+        <label for="Carro-cores-Verde">Verde</label>
+    </div>
+    <div>
+        <input type="checkbox" name="Amarelo" id="Carro-cores-Amarelo">
+        <label for="Carro-cores-Amarelo">Amarelo</label>
+    </div>
+    <label for="Carro-tipo">Escolha o tipo do carro : </label>
+    <select name="tipo" id="Carro-tipo">
+        <option selected=" select" disabled="disabled">Selecione uma opção</option>
+        <option value="SUV">SUV</option>
+        <option value="hatch">hatch</option>
+        <option value="sedan">sedan</option>
+        <option value="perua">perua</option>
+        <option value="Mini-van">Mini-van</option>
+    </select>
+    <table width="600" cellpadding="5" cellSpacing="5" border="1">
+        <thead>
+            <tr>
+                <th>Imagem</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Tipo</th>
+                <th>Novo/Usado</th>
+                <th>Ano</th>
+                <th>Mais informaçoes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2024/202404/20240425/volkswagen-jetta-2-0-350-tsi-gasolina-gli-dsg-wmimagem13354144738.webp?s=fill&w=249&h=186&q=70"
+                        alt="imagem de um volkswagen jetta" width="150"></td>
+                <td>Volkswagen</td>
+                <td>Jetta</td>
+                <td>Sedã</td>
+                <td>Usado</td>
+                <td>2020</td>
+                <td><a target="_blank"
+                        href="https://www.webmotors.com.br/comprar/volkswagen/jetta/20-350-tsi-gasolina-gli-dsg/4-portas/2020/51794659?pos=h51794659g:&np=1">Mais
+                        informaçoes</a></td>
+            </tr>
+            <tr>
+                <td><img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2024/202404/20240417/porsche-cayenne-3-0-v6-ehybrid-coupe-awd-tiptronic-s-wmimagem13412956912.webp?s=fill&w=249&h=186&q=70"
+                        alt="Imagem de um porche cayenne" width="150"></td>
+                <td>Porsche </td>
+                <td>Cayenne</td>
+                <td>Utilitário esportivo</td>
+                <td>Novo</td>
+                <td>2021</td>
+                <td><a target="_blank"
+                        href="https://www.webmotors.com.br/comprar/porsche/cayenne/30-v6-e-hybrid-coupe-awd-tiptronic-s/4-portas/2021/51433978?pos=k51433978m:&np=11">Mais
+                        informaçoes</a></td>
+            </tr>
+            <tr>
+                <td><img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2024/202405/20240503/bmw-320i-2-0-16v-turbo-gasolina-sport-automatico-wmimagem18181733491.webp?s=fill&w=249&h=186&q=70"
+                        alt="Imagem de uma BMW 320i" width="150"></td>
+                <td>BMW</td>
+                <td>320i</td>
+                <td>Sedã</td>
+                <td>Novo</td>
+                <td>2019-2020</td>
+                <td><a target="_blank"
+                        href="https://www.webmotors.com.br/comprar/bmw/320i/20-16v-turbo-gasolina-sport-automatico/4-portas/2019-2020/51806608?pos=undefined&np=2">Mais
+                        informaçoes</a></td>
+            </tr>
+            <tr>
+                <td><img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2024/202403/20240313/hyundai-hb20-1.0-12v-flex-vision-manual-wmimagem18513079029.jpg?s=fill&w=249&h=186&q=70"
+                        alt="Imagem de uma hyundai Hb20" width="150"></td>
+                <td>Hyundai</td>
+                <td>HB20</td>
+                <td>Hatchback</td>
+                <td>Novo</td>
+                <td>2021-2022</td>
+                <td><a target="_blank"
+                        href="https://www.webmotors.com.br/comprar/hyundai/hb20/10-12v-flex-vision-manual/4-portas/2021-2022/50748839?pos=g50748839g:&np=2">Mais
+                        informaçoes</a></td>
+            </tr>
+            <tr>
+                <td><img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2024/202403/20240308/citroen-c4-cactus-1.6-vti-120-flex-feel-eat6-wmimagem11274355094.jpg?s=fill&w=249&h=186&q=70"
+                        alt="imagem de um citroen C4 cactus" width="150"></td>
+                <td>Citroen</td>
+                <td>C4 cactus</td>
+                <td>Utilitário esportivo</td>
+                <td>Usado</td>
+                <td>2021-2022</td>
+                <td><a target="_blank"
+                        href="https://www.webmotors.com.br/comprar/citroen/c4-cactus/16-vti-120-flex-feel-eat6/4-portas/2021-2022/50979371?pos=undefined&np=2">Mais
+                        informaçoes</a></td>
+            </tr>
+        </tbody>
+        <div><button type="submit">Filtros</button></div>
+        </form>
+    </table>
+</body>
+
+</html>
