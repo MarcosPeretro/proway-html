@@ -1,0 +1,13 @@
+body{
+    background-color: darkblue;
+}
+h2{
+    color: lightgreen;
+}
+span{
+    color: rgb(182, 28, 54);
+}
+p{
+    background-color: #EB8C6C;
+    font-size: 15px;
+}

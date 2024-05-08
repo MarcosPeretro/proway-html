@@ -1,0 +1,21 @@
+
+.borda-topo{
+    border-top-width: 1px;
+    border-top-color: blueviolet;
+    border-top-style: solid;
+}
+.borda-direita{
+    border-right-width: 4px;
+    border-right-color: rgb(157, 32, 32);
+    border-right-style: solid;
+}
+.borda-base{
+    border-bottom-width: 3px;
+    border-bottom-color: rgb(64, 44, 44);
+    border-bottom-style: solid;
+}
+.borda-esquerda{
+    border-left-width: 2px;
+    border-left-color: rgb(69, 43, 92);
+    border-left-style: solid;
+}

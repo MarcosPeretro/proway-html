@@ -1,0 +1,21 @@
+.botao{
+    text-decoration: none;
+    background-color: tomato;
+    width: 100px; /* width: é utilizado para definir a largura do elemento*/
+    height: 30px; /* height; é utilizar para definir a altura do elemento*/
+    display: inline-block;
+    text-align: center;
+    color: black;
+}
+
+.botao:hover{ /* hover é o evento de passar com o mouse por cima do elemento*/
+    background-color: red;
+    opacity: 0.8; /* alterar a opacidade cor de fundo do botão para 80% */
+}
+.negrito{
+    font-weight: bold;
+}
+
+.largura-150{
+    width: 150px;
+}
