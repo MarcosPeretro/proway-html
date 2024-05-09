@@ -1,4 +1,7 @@
-
+/* aplicando o css para classe "borda-topo" e a classe "borda-direita" */
+.borda-topo, .borda-direita, .borda-base, .borda-esquerda, .borda-completa, .borda-dashed, .borda-dotted, .borda-double{
+    display: block;
+}
 .borda-topo{
     border-top-width: 1px;
     border-top-color: blueviolet;
@@ -18,4 +21,28 @@
     border-left-width: 2px;
     border-left-color: rgb(69, 43, 92);
     border-left-style: solid;
+}
+.borda-completa{
+    border-top: 3px solid rgb(84, 74, 134);
+    border-right: 3px solid rgb(84, 74, 134);
+    border-bottom: 3px solid rgb(84, 74, 134);
+    border-left: 3px solid rgb(84, 74, 134);
+}
+.borda-dashed{
+    border-top: 3px dashed rgb(84, 74, 134);
+    border-right: 3px dashed rgb(84, 74, 134);
+    border-bottom: 3px dashed rgb(84, 74, 134);
+    border-left: 3px dashed rgb(84, 74, 134);
+}
+.borda-dotted{
+    border-top: 3px dotted rgb(84, 74, 134);
+    border-right: 3px dotted rgb(84, 74, 134);
+    border-bottom: 3px dotted rgb(84, 74, 134);
+    border-left: 3px dotted rgb(84, 74, 134);
+}
+.borda-double{
+    border-top: 3px double rgb(86, 134, 74);
+    border-right: 3px double rgb(134, 119, 74);
+    border-bottom: 3px double rgb(21, 17, 45);
+    border-left: 3px double rgb(87, 134, 74);
 }
