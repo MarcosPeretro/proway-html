@@ -1,0 +1,23 @@
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: dimgray;
+    animation-name: minhaAnimacao;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes minhaAnimacao{
+    0%{
+        transform: translateX(0);
+        background-color: yellow;
+    }
+    50%{
+        transform: translateX(100%);
+        background-color: green;
+    }
+    100%{
+        transform: translate(0%);
+        background-color: red;
+    }
+}

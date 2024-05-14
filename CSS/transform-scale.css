@@ -1,0 +1,9 @@
+.scale-box{
+    width: 100px;
+    height: 100px;
+    background-color: darkorchid;
+    transition: transform 0.5s ease-out;
+}
+.scale-box:hover{
+    transform: scale(0.5);
+}

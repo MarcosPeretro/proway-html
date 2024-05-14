@@ -1,0 +1,22 @@
+.flexbox{
+    display: flex;
+    flex-direction: row; /*colunas*/
+
+    /* flex-direction
+    - collumn (seria em linhas )
+    - row (seria em colunas
+    - row-reverse (seria em colunas, porém inverte os elementos de lugar)
+    -column-reverse ( seria em linhas, porém inverte os elemento)
+    */
+    flex-wrap: wrap; 
+    /* flex-wrap:
+        -wrap: determina se os elementos quando não couberem na tela, deverão ser deslocados para linha/coluna
+        -nowrap: valor padrão, não quebra linha/coluna, gerando o scroll
+    */
+}
+.flexbox div{
+    background-color: darkkhaki;
+    width: 100px;
+    height: 100px;
+    min-width: 100px;
+}
