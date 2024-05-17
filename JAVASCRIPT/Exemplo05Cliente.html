@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Clientes</title>
+    <link rel="stylesheet" href="css/Exemplo05Cliente.css">
+</head>
+
+<body>
+    <h1 class="titulo-lista-cliente">Lista de Clientes</h1>
+    <div class="container">
+        <div class="cadastro-clientes">
+            <div class="cadastro-clientes">
+                <div>
+                    <label for="nome">Nome</label>
+                    <input type="text" name="Nome" id="nome">
+                </div>
+                <div class="cliente-tipo">
+                    <label for="tipoPessoaFisica">tipoPessoaFisica</label>
+                    <input type="radio" name="tipoPessoa" id="tipoPessoaFisica" value="pf">
+                    <label for="tipoPessoaJuridica">tipoPessoaJurídica</label>
+                    <input type="radio" name="tipoPessoa" id="tipoPessoaJuridica" value="pj">
+                </div>
+                <div class="campo-pj inactive">
+                    <label for="cnpj">CNPJ</label>
+                    <input type="text" name="cnpj" id="cnpj">
+                </div>
+                <div class="campo-pj inactive">
+                    <label for="razaoSocial">Razão Social</label>
+                    <input type="text" name="razaoSocial" id="razaoSocial">
+                </div>
+                <div class="campo-pf inactive">
+                    <label for="cpf">CPF</label>
+                    <input type="text" name="cpf" id="cpf">
+                </div>
+                <div class="campo-pf inactive">
+                    <label for="dataNascimento">dataNascimento</label>
+                    <input type="date" name="dataNascimento" id="dataNascimento">
+                </div>
+                <div class="campo-pf inactive">
+                    <label for="apelido">Apelido</label>
+                    <input type="text" name="apelido" id="apelido">
+                </div>
+                <div class="botao ">
+                    <button type="button" id="botao-salvar">
+                        <i class="fa-solid fa-save"></i> Cadastrar
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="lista-clientes">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Nome / Razão Social</th>
+                        <th>CPF / CNPJ</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>João Carlos Miguel</td>
+                        <td>400.289.228-71</td>
+                        <td>
+                            <button class="botao-editar">
+                                <i class="fa-solid fa-pencil"></i> Editar
+                            </button>
+                            <button class="botao-apagar">
+                                <i class="fa-solid fa-trash"></i> 
+                                Apagar
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>  
+    <script src="https://kit.fontawesome.com/491d639334.js" crossorigin="anonymous"></script>
+    <script src="js/Exemplo05Cliente.js"></script>
+</body>
+
+</html>
