@@ -8,6 +8,8 @@ const campoRazaoSocial = document.getElementById("razaoSocial");
 
 //clientes sera utilizado para armazenar a nossa lista de clientes
 const clientes = JSON.parse(localStorage.getItem("clientes")) || [];
+let idProximoCliente = 0;
+let idAtual = -1;
 
 const campoCpf = document.getElementById("cpf");
 const mascaraCPF = { mask: "000.000.000-00" };
@@ -70,10 +72,43 @@ function salvarCliente() {
     const tipoPessoa = document.querySelector("input[name='tipoPessoa']:checked").value;
     console.log(tipoPessoa)
 
-    criarLinha(nome, cpf, dataNascimento, apelido, cnpj, razaoSocial, tipoPessoa);
-    limparCampos()
+    if (idAtual == -1) {
+        const cliente = cadastroCliente(nome, cpf, dataNascimento, apelido, cnpj, razaoSocial, tipoPessoa, idAtual);
+        clientes.push(cliente)
+    }
+    else {
+        const cliente = editarCliente(nome, cpf, dataNascimento, apelido, cnpj, razaoSocial, tipoPessoa, idAtual);
+    }
+    const clientesString = JSON.stringify(clientes)
+    localStorage.setItem("clientes", clientesString)
+}
+function editarCliente(nome, cpf, dataNascimento, apelido, cnpj, razaoSocial, tipoPessoa, idAtual) {
+    for (let i = 0; i < clientes.length; i++) {
+        let cliente = clientes[i];
+        if (cliente.id == idAtual) {
+            cliente.nome = nome;
+            cliente.cpf = cpf;
+            cliente.dataNascimento = dataNascimento;
+            cliente.apelido = apelido;
+            cliente.cnpj = cnpj;
+            cliente.razaoSocial = razaoSocial;
+            cliente.tipoPessoa = tipoPessoa;
+            limparCampos();
+            carregarClientesNaTabela();
+            idAtual = -1;
+            return cliente;
+        }
+    }
+}
+
+function cadastroCliente(nome, cpf, dataNascimento, apelido, cnpj, razaoSocial, tipoPessoa) {
+    idProximoCliente += 1;
+
+    criarLinha(idProximoCliente, nome, cpf, dataNascimento, apelido, cnpj, razaoSocial, tipoPessoa);
+    limparCampos();
 
     const cliente = {
+        id: idProximoCliente,
         nome: nome,
         cpf: cpf,
         dataNascimento: dataNascimento,
@@ -82,9 +117,51 @@ function salvarCliente() {
         razaoSocial: razaoSocial,
         tipoPessoa: tipoPessoa
     };
-    clientes.push(cliente)
-    const clientesString = JSON.stringify(clientes)
-    localStorage.setItem("clientes", clientesString)
+    return cliente;
+}
+
+function editar(event) {
+    var target = event.target;
+    var id = parseInt(target.getAttribute("data-id"))
+
+    for (let i = 0; i < clientes.length; i++) {
+        let cliente = clientes[i]
+        if (cliente.id == id) {
+            idAtual = cliente.id;
+            campoNome.value = cliente.nome
+            campoCpf.value = cliente.cpf
+            campoDataNascimento.value = cliente.dataNascimento
+            campoApelido.value = cliente.apelido
+            campoCNpj.value = cliente.cnpj
+            campoRazaoSocial.value = cliente.razaoSocial
+            let evento = new Event("change");
+
+            if (cliente.tipoPessoa == "pf") {
+                campoTipoPF.checked = true;
+                campoApelido.dispatchEvent(evento)
+            }
+            else {
+                campoTipoPJ.checked = true;
+                campoTipoPJ.dispatchEvent(evento)
+            }
+            return;
+        }
+    }
+}
+function apagar(event) {
+    var target = event.target;
+    var id = parseInt(target.getAttribute("data-id"))
+
+    for (let i = 0; i < clientes.length; i++) {
+        let cliente = clientes[i]
+        if (cliente.id == id) {
+            clientes.splice(i, 1)
+            var clientesString = JSON.stringify(clientes)
+            localStorage.setItem("clientes", clientesString);
+            carregarClientesNaTabela();
+            return;
+        }
+    }
 }
 
 function limparCampos() {
@@ -97,14 +174,14 @@ function limparCampos() {
     campoNome.focus();
 }
 
-function criarLinha(nome, cpf, dataNascimento, apelido, cnpj, razaoSocial, tipoPessoa) {
+function criarLinha(idCliente, nome, cpf, dataNascimento, apelido, cnpj, razaoSocial, tipoPessoa) {
     // Criar um elemento de tr no javascript
     const novaLinha = document.createElement("tr");
 
     // Criar um elemento de coluna para o código
     const novaCelulaCodigo = document.createElement("td");
     // Definir o conteúdo dessa coluna do código
-    novaCelulaCodigo.innerHTML = "2";
+    novaCelulaCodigo.innerHTML = idCliente;
 
     // Criar um elemento de coluna para o nome
     const novaCelulaNome = document.createElement("td");
@@ -132,9 +209,13 @@ function criarLinha(nome, cpf, dataNascimento, apelido, cnpj, razaoSocial, tipoP
 
     novoBotaoEditar.appendChild(novoIconeEditar)
     novoBotaoEditar.innerHTML += "Editar"
+    novoBotaoEditar.addEventListener("click", editar)
+    novoBotaoEditar.setAttribute("data-id", idCliente)
 
     novoBotaoApagar.appendChild(novoIconeApagar)
     novoBotaoApagar.innerHTML += "Apagar"
+    novoBotaoApagar.addEventListener("click", apagar)
+    novoBotaoApagar.setAttribute("data-id", idCliente)
 
     novaCelulaBotoes.appendChild(novoBotaoEditar)
     novaCelulaBotoes.appendChild(novoBotaoApagar)
@@ -153,8 +234,8 @@ function criarLinha(nome, cpf, dataNascimento, apelido, cnpj, razaoSocial, tipoP
 }
 
 carregarClientesNaTabela();
-campoTipoPF.onclick = apresentarCamposPF;
-campoTipoPJ.onclick = apresentarCamposPJ;
+campoTipoPF.onchange = apresentarCamposPF;
+campoTipoPJ.onchange = apresentarCamposPJ;
 botaoSalvar.onclick = salvarCliente;
 
 
@@ -168,15 +249,28 @@ botaoSalvar.onclick = salvarCliente;
 // Delete: remover um item por chave
 // localStorage.removeItem("nome");
 function carregarClientesNaTabela() {
+    var tbody = document.querySelector("table tbody");
+    tbody.innerHTML = "";
     for (let i = 0; i < clientes.length; i++) {
         let cliente = clientes[i]
         criarLinha(
+            cliente.id,
             cliente.nome,
             cliente.cpf,
             cliente.dataNascimento,
             cliente.apelido,
             cliente.cnpj,
             cliente.razaoSocial,
-            cliente.tipoPessoa)
+            cliente.tipoPessoa
+        )
+        if (cliente.id > idProximoCliente)
+            idProximoCliente = cliente.id;
     }
+}
+
+function alterarTipoPessoa() {
+    if (campoTipoPF.checked === true)
+        apresentarCamposPF();
+    else if (campoTipoPJ.checked === true)
+        apresentarCamposPJ();
 }
